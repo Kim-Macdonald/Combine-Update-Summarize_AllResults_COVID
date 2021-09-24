@@ -92,9 +92,28 @@ It will create 2 files:
 
 ## Compare2UpdatedLineageOutputFiles_v2.py
 
-This script will compare the output of 2 files and A) show any rows that are different and B) show any fields that have non-matching values.
+This script will compare the output of 2 files and: 
 
-This is currently customized to work with the Runs_CombinedQCsummary_PlusNewestLineages_[date].csv file produced above, and a file of the same name that was produced for all runs more manually. It was used to validate the output contents to ensure no concerning issues existed when using the newer method/script. 
+A) First show any rows that are different. 
+- Both files should have the same # rows if content matches (or if # samples in both is the same)
+
+
+B) Then show any fields that have non-matching values. 
+- (the above lines can be commented out once it's confirmed that both files have the same # rows (they should also have the same columns - with identical header names). 
+- Then the focus will be on showing whether any column has non-matching values between the 2 files). 
+
+
+This is currently customized to work with the "Runs_CombinedQCsummary_PlusNewestLineages_[date].csv" file produced above, and a file of the same name that was produced for all runs more manually. It was used to validate the output contents to ensure no concerning issues existed when using the newer method/script. 
+
+### Assumptions
+Your 2 files have the same column headers (same # and same names)
+once part A) is run, it's assumed the # of rows is the same. 
+
+### Usage
+Use part A) of the script first (comment out the lines for part B - lines ___ - ____) to ensure your new script is pulling in the same data as the old method. If the new file is missing rows, or has extra rows, investigate the cause and solve it before using part B) of the script. 
+
+Use part B) of the script once you've confirmed you have the same # rows and same samples in both files (none missing or extra). (comment out lines for part A - lines ___ - ___). This will tell you which columns and for which samples do not match, which will allow you to investigate whether the new script needs to be modified (or if it's outperforming the old method). 
+
 
 
 
