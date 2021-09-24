@@ -90,4 +90,13 @@ It will create 2 files:
 
 
 
+## Compare2UpdatedLineageOutputFiles_v2.py
+
+This script will compare the output of 2 files and A) show any rows that are different and B) show any fields that have non-matching values.
+
+This is currently customized to work with the Runs_CombinedQCsummary_PlusNewestLineages_[date].csv file produced above, and a file of the same name that was produced for all runs more manually. It was used to validate the output contents to ensure no concerning issues existed when using the newer method/script. 
+
+
+
+
 
